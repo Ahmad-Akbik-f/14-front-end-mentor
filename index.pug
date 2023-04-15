@@ -1,0 +1,47 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap" rel="stylesheet">
+        link(rel="stylesheet", href="./CSS/style.css")
+        link(rel="stylesheet", href="./CSS/Normlize.css")
+        title Interactive card details form
+    body 
+        main 
+            .img-cards
+                img(src="./images/bg-main-desktop.png", alt="img")
+                .cards 
+                    .front 
+                        .front__img
+                        .front__number 
+                            - let j = 1;
+                            - for(let i = 1;i<5;i++)
+                                div(class=`nums-${i}`)
+                                    - for(j;j<(i*4)+1;j++)
+                                        p(class=`nums-${(j)}`) 0
+                        .front__det
+                            p.name  Jane Applesseed
+                            p.date  0/0
+                    .back 
+                        .back__num 000
+                            
+            form(action="#")
+                label(for="name") CARDHOLDER NAME
+                input(type="text" name="name" placeholder="e.g. Jane Applesseed")
+                label(for="number") CARD NUMBER
+                input(type="text" name="number" placeholder="e.g. 1234 5678 9123 0000")
+                .form__det   
+                    label(for="date") EXP. DATE (MM/YY)
+                    .date 
+                        input(type="text" name="month" placeholder="MM")
+                        input(type="text" name="year" placeholder="YY")
+                    .backNumber 
+                        label(for="text") CVC
+                        input(type="text" placeholder="e.g. 123")
+                a(href="#") Confirm
+                    
+

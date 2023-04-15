@@ -1,0 +1,314 @@
+body {
+  font-family: "Space Grotesk", sans-serif;
+}
+
+main {
+  display: flex !important;
+  height: 100vh;
+  position: relative;
+}
+
+.img-cards {
+  height: 100%;
+  z-index: 2;
+}
+.img-cards .img {
+  min-width: 350px;
+  z-index: -1;
+  background-image: url(../images/bg-main-desktop.png);
+  height: 100%;
+  position: absolute;
+  background-size: cover;
+}
+@media (max-width: 787px) {
+  .img-cards .img {
+    min-width: 100%;
+    height: 170px;
+    background-image: url(../images/bg-main-mobile.png);
+  }
+}
+.img-cards .cards {
+  position: absolute;
+  top: 35%;
+  left: 5%;
+}
+@media (max-width: 787px) {
+  .img-cards .cards {
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+.img-cards .cards .card {
+  position: relative;
+  transition: 0.5s transform;
+  transform-style: preserve-3d;
+  width: 447px;
+  height: 245px;
+}
+@media (max-width: 787px) {
+  .img-cards .cards .card {
+    width: 300px;
+    height: 165px;
+  }
+}
+.img-cards .cards .card.fliped {
+  transform: rotateY(180deg);
+}
+.img-cards .cards .card.fliped:hover {
+  transform: rotateY(0deg);
+}
+.img-cards .cards .card:hover {
+  transform: rotateY(180deg);
+}
+.img-cards .cards .card .front {
+  position: absolute;
+  backface-visibility: hidden;
+  width: 100%;
+  background-repeat: no-repeat;
+  height: 100%;
+  color: #fff;
+  background-image: url(../images/bg-card-front.png);
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 30px;
+}
+@media (max-width: 787px) {
+  .img-cards .cards .card .front {
+    background-size: contain;
+  }
+}
+.img-cards .cards .card .front__img {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background-color: #fff;
+  border-radius: 50%;
+  top: 30px;
+  left: 30px;
+}
+@media (max-width: 787px) {
+  .img-cards .cards .card .front__img {
+    top: 20px;
+    left: 20px;
+    width: 30px;
+    height: 30px;
+  }
+  .img-cards .cards .card .front__img::after {
+    width: 9px !important;
+    height: 9px !important;
+    right: -19px !important;
+  }
+}
+.img-cards .cards .card .front__img::after {
+  content: "";
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  border: 1px solid #fff;
+  border-radius: 50%;
+  bottom: 50%;
+  transform: translateY(50%);
+  right: -35px;
+}
+.img-cards .cards .card .front__number {
+  font-size: 27px;
+  letter-spacing: 5px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+.img-cards .cards .card .front__number .nums {
+  display: flex;
+}
+.img-cards .cards .card .front__number .nums p {
+  margin-bottom: 15px;
+}
+@media (max-width: 787px) {
+  .img-cards .cards .card .front__number {
+    font-size: 19px;
+    letter-spacing: 2px;
+    gap: 5px;
+  }
+  .img-cards .cards .card .front__number p {
+    margin-bottom: 0px !important;
+  }
+}
+.img-cards .cards .card .front__det {
+  width: calc(100% - 60px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+@media (max-width: 787px) {
+  .img-cards .cards .card .front__det {
+    margin-bottom: 20px;
+    margin-top: 15px;
+    font-size: 12px;
+  }
+  .img-cards .cards .card .front__det p {
+    margin: 0;
+  }
+}
+.img-cards .cards .card .back {
+  transform: rotateY(180deg);
+  background-size: cover;
+  position: absolute;
+  background-repeat: no-repeat;
+  backface-visibility: hidden;
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  background-image: url(../images/bg-card-back.png);
+}
+.img-cards .cards .card .back p {
+  position: absolute;
+  top: 39%;
+  right: 60px;
+  letter-spacing: 2px;
+}
+@media (max-width: 787px) {
+  .img-cards .cards .card .back p {
+    top: 38%;
+    font-size: 12px;
+    right: 40px;
+  }
+}
+
+.form {
+  flex: 1.3;
+  position: relative;
+  height: 100%;
+  z-index: 1;
+}
+.form form {
+  width: 350px;
+  position: absolute;
+  top: 50%;
+  right: 20%;
+  transform: translateY(-50%);
+}
+@media (max-width: 787px) {
+  .form form {
+    width: 320px;
+    right: 50%;
+    transform: translate(50%, -50%);
+    margin-top: 50px;
+  }
+  .form form label {
+    min-width: 0;
+  }
+}
+.form form label {
+  color: hsl(278, 68%, 11%);
+  font-size: 13px;
+  letter-spacing: 1px;
+  min-width: 150px;
+  display: block;
+}
+.form form input {
+  display: block;
+  width: calc(100% - 32px);
+  padding: 10px 15px;
+  border: 0.5px solid hsl(270, 3%, 87%);
+  outline: none;
+  border-radius: 10px;
+  color: hsl(278, 68%, 11%);
+  margin-top: 8px;
+}
+.form form input:focus {
+  background: linear-gradient(white, white) padding-box, linear-gradient(hsl(249, 99%, 64%), hsl(278, 94%, 30%)) border-box;
+  border: 0.5px solid transparent;
+}
+.form form input:not(input[name=year], input[name=month], input[name=cvc]) {
+  margin-bottom: 20px;
+}
+.form form input::-moz-placeholder {
+  color: hsl(270, 3%, 87%);
+}
+.form form input::placeholder {
+  color: hsl(270, 3%, 87%);
+}
+@media (max-width: 787px) {
+  .form form input[name=cvc] {
+    width: 120px;
+  }
+}
+.form form .form__det {
+  display: flex;
+  gap: 20px;
+}
+.form form .form__det .date {
+  flex: 1;
+}
+.form form .form__det .date__input {
+  flex: 0.5;
+  display: flex;
+  gap: 10px;
+}
+.form form .form__det .backNumber {
+  flex: 1;
+}
+.form form .button {
+  width: 100%;
+  display: block;
+  margin-top: 30px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
+  background-color: hsl(278, 68%, 11%);
+  padding: 15px 0;
+  border-radius: 10px;
+}
+.form form .button:hover {
+  background-image: linear-gradient(hsl(249, 99%, 64%), hsl(278, 94%, 30%));
+}
+
+.error {
+  position: relative;
+}
+.error:not(input[name=year], input[name=month], input[name=cvc]) {
+  margin-bottom: 40px;
+}
+.error.cvc::after {
+  content: "That's not complete";
+}
+.error::after {
+  content: "Cannot Be That Short";
+  position: absolute;
+  bottom: -20px;
+  left: 2px;
+  color: hsl(0, 100%, 66%);
+  font-size: 12px;
+  display: block;
+}
+.error.num::after {
+  content: "Wrong Format, Numbers Only";
+}
+.error input.error {
+  border-color: hsl(0, 100%, 66%) !important;
+}
+
+form.done {
+  text-align: center;
+}
+form.done div {
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  background-image: linear-gradient(hsl(249, 99%, 64%), hsl(278, 94%, 30%));
+  margin: auto;
+  font-size: 25px;
+  color: #fff;
+  line-height: 70px;
+}
+form.done h2 {
+  letter-spacing: 4px;
+}
+form.done p {
+  color: hsl(279, 6%, 55%);
+}/*# sourceMappingURL=style.css.map */

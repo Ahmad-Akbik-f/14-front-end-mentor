@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./CSS/style.css" />
+    <link rel="stylesheet" href="./CSS/Normlize.css" />
+    <title>Interactive card details form</title>
+  </head>
+  <body>
+    <main>
+      <div class="img-cards">
+        <div class="img"></div>
+        <div class="cards">
+          <div class="card">
+            <div class="back">
+              <p class="back__num">###</p>
+            </div>
+            <div class="front">
+              <div class="front__img"></div>
+              <div class="front__number">
+                <div class="nums">
+                  <p class="nums-1">0</p>
+                  <p class="nums-2">0</p>
+                  <p class="nums-3">0</p>
+                  <p class="nums-4">0</p>
+                </div>
+                <div class="nums">
+                  <p class="nums-5">0</p>
+                  <p class="nums-6">0</p>
+                  <p class="nums-7">0</p>
+                  <p class="nums-8">0</p>
+                </div>
+                <div class="nums">
+                  <p class="nums-9">0</p>
+                  <p class="nums-10">0</p>
+                  <p class="nums-11">0</p>
+                  <p class="nums-12">0</p>
+                </div>
+                <div class="nums">
+                  <p class="nums-13">0</p>
+                  <p class="nums-14">0</p>
+                  <p class="nums-15">0</p>
+                  <p class="nums-16">0</p>
+                </div>
+              </div>
+              <div class="front__det">
+                <p class="name">Jane Applesseed</p>
+                <p class="date">
+                  <span class="month">00</span>/<span class="year">00</span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="form">
+        <form action="#">
+          <div class="name">
+            <label for="name">CARDHOLDER NAME</label>
+            <input type="text" name="name" placeholder="e.g. Jane Applesseed" />
+          </div>
+          <div class="number">
+            <label for="number">CARD NUMBER</label>
+            <input
+              type="text"
+              name="number"
+              maxlength="16"
+              placeholder="e.g. 1234 5678 9123 0000"
+            />
+          </div>
+          <div class="form__det">
+            <div class="date">
+              <label for="date__input">EXP. DATE (MM/YY)</label>
+              <div class="date__input">
+                <input
+                  type="text"
+                  name="month"
+                  maxlength="2"
+                  placeholder="MM"
+                />
+                <input type="text" name="year" maxlength="2" placeholder="YY" />
+              </div>
+            </div>
+            <div class="backNumber">
+              <label for="text">CVC</label>
+              <input
+                type="text"
+                name="cvc"
+                maxlength="3"
+                placeholder="e.g. 123"
+              />
+            </div>
+          </div>
+          <a href="#" class="button">Confirm</a>
+        </form>
+      </div>
+    </main>
+    <script src="./JS/main.js"></script>
+  </body>
+</html>
